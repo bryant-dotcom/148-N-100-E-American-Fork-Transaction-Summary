@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>40 North Real Estate | Transaction Dashboard</title>
+
+<style>
+:root{
+  --black:#050505;
+  --gold:#c89d6b;
+  --red:#ed1c24;
+  --cream:#f7efe5;
+  --light:#f4f1ec;
+  --gray:#666;
+  --line:#eadfD3;
+}
+
+*{box-sizing:border-box;}
+
+body{
+  margin:0;
+  font-family:Arial, Helvetica, sans-serif;
+  background:var(--light);
+  color:#1f1f1f;
+}
+
+.hero{
+  background:#000;
+  text-align:center;
+  padding:34px 20px;
+  border-bottom:8px solid var(--gold);
+}
+
+.hero img{
+  max-width:520px;
+  width:88%;
+}
+
+.container{
+  max-width:1180px;
+  margin:28px auto 48px;
+  padding:0 22px;
+}
+
+.panel{
+  background:#fff;
+  border-radius:18px;
+  box-shadow:0 10px 28px rgba(0,0,0,.08);
+  padding:26px;
+}
+
+.cover{
+  border-left:8px solid var(--gold);
+}
+
+h1{
+  margin:0;
+  font-size:36px;
+}
+
+.address{
+  color:var(--gray);
+  margin-top:8px;
+  font-size:16px;
+}
+
+.badge{
+  display:inline-block;
+  background:var(--cream);
+  border:1px solid var(--gold);
+  border-radius:999px;
+  padding:7px 13px;
+  font-size:13px;
+  font-weight:700;
+  margin:12px 6px 0 0;
+}
+
+.kpi-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:18px;
+  margin-top:22px;
+}
+
+.kpi{
+  background:#fff;
+  border-radius:16px;
+  padding:22px;
+  box-shadow:0 8px 24px rgba(0,0,0,.07);
+}
+
+.kpi .label{
+  color:var(--gray);
+  text-transform:uppercase;
+  letter-spacing:.08em;
+  font-size:12px;
+}
+
+.kpi .value{
+  font-size:30px;
+  font-weight:800;
+  line-height:1.1;
+  margin-top:6px;
+}
+
+.dashboard{
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:18px;
+  margin-top:22px;
+}
+
+.section{
+  background:#fff;
+  border-radius:16px;
+  padding:22px;
+  box-shadow:0 8px 24px rgba(0,0,0,.07);
+}
+
+h2{
+  margin:0 0 16px;
+  color:var(--red);
+  font-size:21px;
+  border-bottom:2px solid var(--gold);
+  padding-bottom:8px;
+}
+
+.row{
+  display:grid;
+  grid-template-columns:42% 58%;
+  gap:14px;
+  padding:11px 0;
+  border-bottom:1px solid #eee;
+  line-height:1.28;
+}
+
+.row:last-child{border-bottom:none;}
+
+.row .key{
+  color:var(--gray);
+}
+
+.row .val{
+  font-weight:500;
+  overflow-wrap:anywhere;
+}
+
+.timeline .row{
+  grid-template-columns:58% 42%;
+}
+
+.timeline .val{
+  text-align:right;
+  font-weight:800;
+}
+
+.money{
+  font-weight:800;
+}
+
+.note{
+  background:#fff8ef;
+  border-left:5px solid var(--gold);
+  border-radius:10px;
+  padding:14px 16px;
+  margin-top:14px;
+  font-size:14px;
+  line-height:1.35;
+}
+
+.contact-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+  margin-top:22px;
+}
+
+.contact-card{
+  background:#fff;
+  border-radius:16px;
+  padding:22px;
+  box-shadow:0 8px 24px rgba(0,0,0,.07);
+}
+
+.contact-card h3{
+  margin:0 0 10px;
+  color:#000;
+  font-size:18px;
+}
+
+.role{
+  color:var(--red);
+  font-weight:800;
+  font-size:13px;
+  text-transform:uppercase;
+  letter-spacing:.06em;
+  margin-bottom:8px;
+}
+
+.contact-card p{
+  margin:4px 0;
+  line-height:1.35;
+  overflow-wrap:anywhere;
+}
+
+.full{
+  margin-top:22px;
+}
+
+.footer{
+  text-align:center;
+  color:var(--gray);
+  font-size:12px;
+  margin-top:26px;
+  line-height:1.4;
+}
+
+@media(max-width:950px){
+  .kpi-grid{grid-template-columns:repeat(2,1fr);}
+  .dashboard{grid-template-columns:1fr;}
+  .contact-grid{grid-template-columns:repeat(2,1fr);}
+}
+
+@media(max-width:620px){
+  h1{font-size:29px;}
+  .kpi-grid,.contact-grid{grid-template-columns:1fr;}
+  .row,.timeline .row{grid-template-columns:1fr;}
+  .timeline .val{text-align:left;}
+}
+
+@media print{
+  body{background:#fff;}
+  .hero{padding:22px;}
+  .panel,.kpi,.section,.contact-card{
+    box-shadow:none;
+    border:1px solid #ddd;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="hero">
+  <img src="40 North Real Estate Signature .png" alt="40 North Real Estate">
+</div>
+
+<div class="container">
+
+  <div class="panel cover">
+    <h1>Transaction Dashboard</h1>
+    <div class="address">148 N 100 E, American Fork, Utah 84003</div>
+    <span class="badge">VA Financing</span>
+    <span class="badge">Settlement: July 22, 2026</span>
+    <span class="badge">$510,000 Purchase Price</span>
+    <span class="badge">$25,000 Seller Concessions</span>
+  </div>
+
+  <div class="kpi-grid">
+    <div class="kpi"><div class="label">Purchase Price</div><div class="value">$510,000</div></div>
+    <div class="kpi"><div class="label">Seller Concessions</div><div class="value">$25,000</div></div>
+    <div class="kpi"><div class="label">Earnest Money</div><div class="value">$1,000</div></div>
+    <div class="kpi"><div class="label">Total Commission</div><div class="value">$30,600</div></div>
+  </div>
+
+  <div class="dashboard">
+
+    <div class="section timeline">
+      <h2>Critical Deadlines</h2>
+      <div class="row"><div class="key">Seller Disclosure</div><div class="val">July 3, 2026</div></div>
+      <div class="row"><div class="key">Due Diligence</div><div class="val">July 11, 2026</div></div>
+      <div class="row"><div class="key">Financing & Appraisal</div><div class="val">July 20, 2026</div></div>
+      <div class="row"><div class="key">Settlement</div><div class="val">July 22, 2026</div></div>
+      <div class="row"><div class="key">Possession</div><div class="val">Upon Recording</div></div>
+      <div class="row"><div class="key">Acceptance Deadline</div><div class="val">July 1, 2026 · 5:00 PM MDT</div></div>
+    </div>
+
+    <div class="section">
+      <h2>Financial Summary</h2>
+      <div class="row"><div class="key">Purchase Price</div><div class="val money">$510,000</div></div>
+      <div class="row"><div class="key">Loan Type</div><div class="val">VA Loan</div></div>
+      <div class="row"><div class="key">Loan Amount</div><div class="val">$500,000</div></div>
+      <div class="row"><div class="key">Estimated Cash to Close</div><div class="val">$9,000</div></div>
+      <div class="row"><div class="key">Seller Concessions</div><div class="val money">$25,000</div></div>
+      <div class="row"><div class="key">Estimated Seller Contract Net</div><div class="val">$485,000 before other closing costs and prorations</div></div>
+      <div class="row"><div class="key">Home Warranty</div><div class="val">Seller paid, up to $750</div></div>
+    </div>
+
+    <div class="section">
+      <h2>Commission Summary</h2>
+      <div class="row"><div class="key">Buyer’s Agent Commission</div><div class="val">3% · <strong>$15,300</strong></div></div>
+      <div class="row"><div class="key">Seller’s Agent Commission</div><div class="val">3% · <strong>$15,300</strong></div></div>
+      <div class="row"><div class="key">Total Commission</div><div class="val money">6% · $30,600</div></div>
+      <div class="note">Commission amounts are calculated from the $510,000 purchase price and included for title/escrow preparation.</div>
+    </div>
+
+    <div class="section">
+      <h2>Title, Escrow & Lender</h2>
+      <div class="row"><div class="key">Seller’s Title Company</div><div class="val">Prospect Title</div></div>
+      <div class="row"><div class="key">Escrow Officer</div><div class="val">Liesl Brems<br>801-225-1924<br>liesl@prospectut.com</div></div>
+      <div class="row"><div class="key">Lender</div><div class="val">Selueni O'Donnell<br>CrossCountry Mortgage<br>619-987-0955<br>Eni.ODonnell@ccm.com</div></div>
+      <div class="row"><div class="key">Earnest Money Holder</div><div class="val">Buyer’s Brokerage</div></div>
+    </div>
+
+  </div>
+
+  <div class="contact-grid">
+    <div class="contact-card">
+      <div class="role">Buyer</div>
+      <h3>Joshua Scott Stever</h3>
+    </div>
+
+    <div class="contact-card">
+      <div class="role">Seller</div>
+      <h3>Greg Roper</h3>
+    </div>
+
+    <div class="contact-card">
+      <div class="role">Buyer’s Agent</div>
+      <h3>Semisi Livai</h3>
+      <p>Equity Real Estate</p>
+      <p>808-741-1060</p>
+      <p>livaihomes@gmail.com</p>
+    </div>
+
+    <div class="contact-card">
+      <div class="role">Seller’s Agent</div>
+      <h3>Bryant Bishop</h3>
+      <p>40 North Real Estate</p>
+      <p>801-722-4687</p>
+      <p>bryant@40northrdc.com</p>
+    </div>
+
+    <div class="contact-card">
+      <div class="role">Loan Officer</div>
+      <h3>Selueni O'Donnell</h3>
+      <p>CrossCountry Mortgage</p>
+      <p>619-987-0955</p>
+      <p>Eni.ODonnell@ccm.com</p>
+    </div>
+
+    <div class="contact-card">
+      <div class="role">Escrow Officer</div>
+      <h3>Liesl Brems</h3>
+      <p>Prospect Title</p>
+      <p>801-225-1924</p>
+      <p>liesl@prospectut.com</p>
+    </div>
+  </div>
+
+  <div class="section full">
+    <h2>Addenda Summary</h2>
+    <div class="row">
+      <div class="key"><strong>Addendum No. 1</strong><br>FHA/VA Loan Addendum</div>
+      <div class="val">
+        <strong>Loan Type:</strong> VA Loan<br>
+        <strong>Seller Concessions:</strong> $25,000 toward buyer closing costs, prepaid items, financing costs, and/or rate buy-down. Any unused portion may be applied toward reducing the purchase price.<br><br>
+        <strong>Seller Responsibilities:</strong><br>
+        Appraisal-required repairs up to <strong>$200</strong>.<br>
+        Pest/termite treatment and repairs, if required, up to <strong>$100</strong>.<br><br>
+        <strong>Acceptance Deadline:</strong> July 1, 2026 at 5:00 PM MDT.
+      </div>
+    </div>
+  </div>
+
+  <div class="section full">
+    <h2>Offer Highlights</h2>
+    <div class="row"><div class="key">Financing</div><div class="val">VA Loan, 100% financing</div></div>
+    <div class="row"><div class="key">Underwriting</div><div class="val">Fully underwritten; contract and appraisal needed</div></div>
+    <div class="row"><div class="key">Closing Timeline</div><div class="val">Less than 3 weeks targeted</div></div>
+    <div class="row"><div class="key">Buyer Contingency</div><div class="val">No home sale contingency</div></div>
+  </div>
+
+  <div class="footer">
+    Prepared for 40 North Real Estate. Confidential transaction summary for informational use only. Refer to executed contract documents for binding terms.
+  </div>
+
+</div>
+
+</body>
+</html>
