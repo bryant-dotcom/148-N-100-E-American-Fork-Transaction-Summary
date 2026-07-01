@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>40 North Real Estate | Transaction Summary</title>
+
+<style>
+:root {
+  --black:#050505;
+  --gold:#c89d6b;
+  --red:#ed1c24;
+  --cream:#f7efe5;
+  --gray:#666;
+}
+
+* { box-sizing:border-box; }
+
+body {
+  margin:0;
+  font-family: Arial, Helvetica, sans-serif;
+  background:#f4f1ec;
+  color:#222;
+}
+
+.hero {
+  background:#000;
+  padding:26px 20px;
+  text-align:center;
+  border-bottom:8px solid var(--gold);
+}
+
+.hero img {
+  max-width:520px;
+  width:90%;
+}
+
+.container {
+  max-width:1120px;
+  margin:26px auto;
+  padding:0 22px 42px;
+}
+
+.title-card, .card {
+  background:white;
+  border-radius:16px;
+  box-shadow:0 8px 24px rgba(0,0,0,.08);
+}
+
+.title-card {
+  padding:28px;
+  border-left:8px solid var(--gold);
+}
+
+h1 {
+  margin:0;
+  font-size:34px;
+  color:#000;
+}
+
+.subtitle {
+  color:var(--gray);
+  margin-top:8px;
+}
+
+.badge {
+  display:inline-block;
+  background:var(--cream);
+  border:1px solid var(--gold);
+  border-radius:999px;
+  padding:7px 13px;
+  font-weight:700;
+  font-size:13px;
+  margin:8px 6px 0 0;
+}
+
+.summary-grid {
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:18px;
+  margin-top:24px;
+}
+
+.detail-grid {
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:18px;
+  margin-top:24px;
+}
+
+.card {
+  padding:22px;
+}
+
+.card h2 {
+  margin:0 0 18px;
+  color:var(--red);
+  font-size:21px;
+  border-bottom:2px solid var(--gold);
+  padding-bottom:8px;
+}
+
+.label {
+  color:var(--gray);
+  font-size:13px;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+}
+
+.big {
+  font-size:31px;
+  font-weight:800;
+  color:#000;
+  line-height:1.1;
+}
+
+.deadline {
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:18px;
+  padding:12px 0;
+  border-bottom:1px solid #eee;
+}
+
+.deadline:last-child { border-bottom:none; }
+
+.deadline strong {
+  text-align:right;
+  min-width:125px;
+  color:#000;
+}
+
+table {
+  width:100%;
+  border-collapse:collapse;
+  table-layout:fixed;
+}
+
+td {
+  padding:11px 0;
+  border-bottom:1px solid #eee;
+  vertical-align:top;
+  overflow-wrap:anywhere;
+  word-break:normal;
+  line-height:1.25;
+}
+
+td:first-child {
+  width:32%;
+  color:var(--gray);
+  padding-right:14px;
+}
+
+td:last-child {
+  width:68%;
+}
+
+.contact {
+  line-height:1.3;
+}
+
+.email {
+  font-size:14px;
+}
+
+.full-width {
+  margin-top:24px;
+}
+
+.footer {
+  text-align:center;
+  color:var(--gray);
+  font-size:12px;
+  margin-top:30px;
+}
+
+@media screen and (max-width:900px) {
+  .summary-grid,
+  .detail-grid {
+    grid-template-columns:1fr 1fr;
+  }
+}
+
+@media screen and (max-width:600px) {
+  .summary-grid,
+  .detail-grid {
+    grid-template-columns:1fr;
+  }
+
+  h1 { font-size:28px; }
+
+  .big { font-size:26px; }
+
+  .deadline {
+    flex-direction:column;
+    gap:4px;
+  }
+
+  .deadline strong {
+    text-align:left;
+  }
+}
+
+@media print {
+  body { background:white; }
+  .title-card, .card {
+    box-shadow:none;
+    border:1px solid #ddd;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="hero">
+  <img src="40 North Real Estate Signature .png" alt="40 North Real Estate Logo">
+</div>
+
+<div class="container">
+
+  <div class="title-card">
+    <h1>Transaction Summary</h1>
+    <div class="subtitle">148 N 100 E, American Fork, Utah 84003</div>
+    <p>
+      <span class="badge">VA Financing</span>
+      <span class="badge">$510,000 Purchase Price</span>
+      <span class="badge">$25,000 Seller Concessions</span>
+    </p>
+  </div>
+
+  <div class="summary-grid">
+    <div class="card">
+      <div class="label">Purchase Price</div>
+      <div class="big">$510,000</div>
+    </div>
+    <div class="card">
+      <div class="label">Seller Concessions</div>
+      <div class="big">$25,000</div>
+    </div>
+    <div class="card">
+      <div class="label">Earnest Money</div>
+      <div class="big">$1,000</div>
+    </div>
+    <div class="card">
+      <div class="label">Possession</div>
+      <div class="big">Upon Recording</div>
+    </div>
+  </div>
+
+  <div class="detail-grid">
+
+    <div class="card">
+      <h2>Critical Deadlines</h2>
+      <div class="deadline"><span>Seller Disclosure</span><strong>July 3, 2026</strong></div>
+      <div class="deadline"><span>Due Diligence</span><strong>July 11, 2026</strong></div>
+      <div class="deadline"><span>Financing & Appraisal</span><strong>July 20, 2026</strong></div>
+      <div class="deadline"><span>Settlement</span><strong>July 22, 2026</strong></div>
+      <div class="deadline"><span>Acceptance Deadline</span><strong>July 1, 2026 · 5:00 PM MDT</strong></div>
+    </div>
+
+    <div class="card">
+      <h2>Financial Terms</h2>
+      <table>
+        <tr><td>Loan Type</td><td>VA Loan</td></tr>
+        <tr><td>Loan Amount</td><td>$500,000</td></tr>
+        <tr><td>Cash at Settlement</td><td>$9,000</td></tr>
+        <tr><td>Estimated Net Sales Price</td><td>$485,000 before other adjustments</td></tr>
+        <tr><td>Home Warranty</td><td>Seller paid, up to $750</td></tr>
+      </table>
+    </div>
+
+    <div class="card">
+      <h2>Parties</h2>
+      <table>
+        <tr><td>Buyer</td><td>Joshua Scott Stever</td></tr>
+        <tr><td>Seller</td><td>Greg Roper</td></tr>
+        <tr>
+          <td>Buyer’s Agent</td>
+          <td class="contact">
+            Semisi Livai<br>
+            Equity Real Estate<br>
+            808-741-1060<br>
+            <span class="email">livaihomes@gmail.com</span>
+          </td>
+        </tr>
+        <tr>
+          <td>Seller’s Agent</td>
+          <td class="contact">
+            Bryant Bishop<br>
+            40 North Real Estate<br>
+            801-722-4687<br>
+            <span class="email">bryant@40northrdc.com</span>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="card">
+      <h2>Lender & Escrow</h2>
+      <table>
+        <tr>
+          <td>Lender</td>
+          <td class="contact">
+            Selueni O'Donnell<br>
+            CrossCountry Mortgage<br>
+            619-987-0955<br>
+            <span class="email">Eni.ODonnell@ccm.com</span>
+          </td>
+        </tr>
+        <tr><td>Title Company</td><td>Not specified</td></tr>
+        <tr><td>Escrow Officer</td><td>Not specified</td></tr>
+        <tr><td>Earnest Money Holder</td><td>Buyer’s Brokerage</td></tr>
+      </table>
+    </div>
+
+  </div>
+
+  <div class="card full-width">
+    <h2>Addenda Summary</h2>
+    <table>
+      <tr>
+        <td>FHA/VA Loan Addendum</td>
+        <td>VA loan selected. Seller contributes $25,000 toward buyer costs. Appraisal-required repairs capped at $200. Termite-related costs capped at $100 if required.</td>
+      </tr>
+      <tr>
+        <td>Addendum No. 1</td>
+        <td>Referenced in REPC but not included in the uploaded document.</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="footer">
+    Prepared for 40 North Real Estate. Informational summary only; refer to executed contract documents for binding terms.
+  </div>
+
+</div>
+
+</body>
+</html>
